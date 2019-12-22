@@ -17,32 +17,9 @@
 
 <div id="primary" class="content-area landing">
 	<main id="main" class="site-main" role="main">
-		<div class="page has-text-centered">
-			<?php while ( have_posts() ) : the_post(); ?>
-				<?php get_template_part( 'template-parts/content', 'page' ); ?>
-			<?php endwhile; ?>
-		</div>
-		<?php 
-		bulmapress_custom_query(array(
-			'post_type' => 'post',
-			'post_class'	=> 'posts',
-			'section_title' => 'Recent Posts',
-			'section_columns' => 3,
-			'section_max_posts' => 3,
-			'section_button_text' => 'See all Posts'
-			)
-		);
-		bulmapress_custom_query(array(
-			'post_type' => 'page',
-			'post_class'	=> 'pages',
-			'section_title' => 'Recent Pages',
-			'section_columns' => 4,
-			'section_max_posts' => 4
-			)
-		);
-		?>
-	</main><!-- #main -->
-</div><!-- #primary -->
+		
+	</main>
+</div>
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
