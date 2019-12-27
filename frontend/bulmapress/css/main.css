@@ -1,3 +1,11 @@
+body.admin-bar #header .navbar {
+    top: 32px;
+}
+
+body.admin-bar .site-content .content-area .site-main .s-hero {
+    min-height: calc(100vh - 34px);
+}
+
 #header {
 
 }
@@ -9,6 +17,10 @@
 
 .site-content .content-area .site-main .s-hero .hero-body {
     z-index: 1;
+}
+
+.site-content .content-area .site-main .s-hero .hero-body .container .title{
+    font-size: 90px;
 }
 
 .site-content .content-area .site-main .s-hero .s-hero__background-image {

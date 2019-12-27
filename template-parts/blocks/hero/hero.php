@@ -2,8 +2,10 @@
     <?php 
     $title = get_field('hero_title');
     $subtitle = get_field('hero_subtitle');
+    $link = get_field('hero_link');
+    $linkText = get_field('hero_link_text');
 
-    if($title || $subtitle):?>
+    if($title || $subtitle || $link):?>
         <div class="hero-body">
             <div class="container">
                 <?php if($title):?>
@@ -11,6 +13,9 @@
                 <?php endif; ?>
                 <?php if($subtitle):?>
                     <h2 class="subtitle is-5"><?php echo $subtitle ?></h2>
+                <?php endif; ?>
+                <?php if($link):?>
+                    <a class="button is-white is-outlined is-medium" href="<?php echo $link ?>"><?php echo $linkText ?></a>
                 <?php endif; ?>
             </div>
         </div>

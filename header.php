@@ -24,7 +24,7 @@
 	<div id="page" class="site">
 		<?php bulmapress_skip_link_screen_reader_text(); ?>
 		<header id="header">
-			<nav id="site-navigation" class="navbar is-fixed-top is-dark" role="navigation">
+			<nav id="site-navigation" class="navbar is-fixed-top is-black" role="navigation">
 				<div class="navbar-brand">
 					<?php bulmapress_home_link('navbar-item'); ?>
 					<?php bulmapress_menu_toggle(); ?>
