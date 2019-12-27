@@ -61,3 +61,9 @@ function additional_custom_styles() {
     wp_enqueue_style( 'uniquestylesheetid', get_template_directory_uri() . '/frontend/bulmapress/css/main.css' ); 
 }
 add_action( 'wp_enqueue_scripts', 'additional_custom_styles' );
+
+function wpb_add_google_fonts() {
+	wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css?family=Cantata+One|Imprima&display=swap', false ); 
+}
+	
+add_action( 'wp_enqueue_scripts', 'wpb_add_google_fonts' );

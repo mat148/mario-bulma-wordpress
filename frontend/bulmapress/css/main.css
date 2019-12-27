@@ -1,3 +1,11 @@
+html body {
+    font-family: 'Imprima', sans-serif;
+}
+
+html body .button {
+    font-family: 'Cantata One', serif;
+}
+
 body.admin-bar #header .navbar {
     top: 32px;
 }
@@ -21,6 +29,7 @@ body.admin-bar .site-content .content-area .site-main .s-hero {
 
 .site-content .content-area .site-main .s-hero .hero-body .container .title{
     font-size: 90px;
+    font-family: 'Cantata One', serif;
 }
 
 .site-content .content-area .site-main .s-hero .s-hero__background-image {
