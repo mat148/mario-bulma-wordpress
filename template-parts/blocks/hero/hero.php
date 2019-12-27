@@ -5,17 +5,30 @@
     $link = get_field('hero_link');
     $linkText = get_field('hero_link_text');
 
+    $featImage = get_field('hero_featured_image');
+
     if($title || $subtitle || $link):?>
         <div class="hero-body">
-            <div class="container">
-                <?php if($title):?>
-                    <h1 class="title is-1 is-uppercase"><?php echo $title ?></h1>
+            <div class="container is-flex">
+                <?php if($featImage):?>
+                    <div class="hero-image">
+                        <img class="is-block" src="<?php echo $featImage['url'] ?>"/>
+                    </div>
                 <?php endif; ?>
-                <?php if($subtitle):?>
-                    <h2 class="subtitle is-5"><?php echo $subtitle ?></h2>
-                <?php endif; ?>
-                <?php if($link):?>
-                    <a class="button is-white is-outlined is-medium is-uppercase" href="<?php echo $link ?>"><?php echo $linkText ?></a>
+                <?php if($title || $subtitle || $link):?>
+                    <div class="hero-content">
+                        <?php if($title):?>
+                            <h1 class="title is-size-1 is-uppercase"><?php echo $title ?></h1>
+                        <?php endif; ?>
+                        <?php if($subtitle):?>
+                            <h2 class="subtitle is-size-5"><?php echo $subtitle ?></h2>
+                        <?php endif; ?>
+                        <?php if($link):?>
+                            <div class="hero-button-container">
+                                <a class="button is-white is-outlined is-medium is-uppercase" href="<?php echo $link ?>"><?php echo $linkText ?></a>
+                            </div>
+                        <?php endif; ?>
+                    </div>
                 <?php endif; ?>
             </div>
         </div>

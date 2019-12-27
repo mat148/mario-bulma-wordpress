@@ -53,13 +53,37 @@ body.admin-bar .site-content .content-area .site-main .s-hero {
     min-height: calc(100vh - 2px);
 }
 
-.site-content .content-area .site-main .s-hero .hero-body {
-    z-index: 1;
+.site-content .content-area .site-main .s-hero .hero-body .hero-image {
+    display: flex;
+    align-items: flex-end;
 }
 
-.site-content .content-area .site-main .s-hero .hero-body .container .title{
-    font-size: 90px;
+.site-content .content-area .site-main .s-hero .hero-body img {
+    max-width: 300px;
+    -webkit-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.35);
+    -moz-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.35);
+    box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.35);
+}
+
+.site-content .content-area .site-main .s-hero .hero-body {
+    z-index: 1;
+    align-items: flex-end;
+}
+
+.site-content .content-area .site-main .s-hero .hero-body .hero-content {
+    padding-left: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.45);
+}
+
+.site-content .content-area .site-main .s-hero .hero-body .container .title {
     font-family: 'Cantata One', serif;
+}
+
+.site-content .content-area .site-main .s-hero .hero-body .container .button {
+    text-shadow: none;
 }
 
 .site-content .content-area .site-main .s-hero .s-hero__background-image {
