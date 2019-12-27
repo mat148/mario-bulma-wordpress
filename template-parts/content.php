@@ -8,7 +8,6 @@
  */
 ?>
 
-
 <?php the_content( sprintf(
 	/* translators: %s: Name of current post. */
 	wp_kses(

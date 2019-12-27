@@ -67,3 +67,9 @@ function wpb_add_google_fonts() {
 }
 	
 add_action( 'wp_enqueue_scripts', 'wpb_add_google_fonts' );
+
+function wpb_add_font_awesome() {
+	wp_enqueue_style( 'wpb-font-awesome', 'https://kit.fontawesome.com/4801ac2f81.js', false ); 
+}
+	
+add_action( 'wp_enqueue_scripts', 'wpb_add_font-awesome' );

@@ -33,7 +33,14 @@
         //$icon = $file['icon'];
 
         if($backgroundMedia['type'] == 'image'): ?>
-            <div class="s-hero__background-image is-overlay is-fullheighthero_background_image_align <?php echo $backgroundImageAttachment ?> " style="background-image: url(<?php echo $url ?>)"></div>
+            <div class="s-hero__background-image is-overlay is-fullheight hero_background_image_align <?php echo $backgroundImageAttachment ?> " style="background-image: url(<?php echo $url ?>)"></div>
+        <?php endif; ?>
+        <?php if($backgroundMedia['type'] == 'video'): ?>
+            <div class="s-hero__background-video-container">
+                <video class="s-hero__background-video is-overlay is-fullheight" autoplay loop muted>
+                    <source src="<?php echo $url ?>" type="video/mp4"/>
+                </video>
+            </div>
         <?php endif; ?>
     <?php endif; ?>
 

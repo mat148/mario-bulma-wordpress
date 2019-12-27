@@ -26,11 +26,10 @@
 		<header id="header">
 			<nav id="site-navigation" class="navbar is-fixed-top is-black" role="navigation">
 				<div class="navbar-brand">
-					<?php bulmapress_home_link('navbar-item'); ?>
+					<a href="<?php echo get_home_url(); ?>" class="navbar-item is-white is-uppercase is-size-4">Supa</a>
 					<?php bulmapress_menu_toggle(); ?>
 				</div>
-				<div class="navbar-menu">
-					<div class="navbar-start"></div>
+				<div class="navbar-menu is-uppercase">
 					<?php bulmapress_navigation(); ?>
 				</div>
 			</nav>

@@ -14,8 +14,38 @@ body.admin-bar .site-content .content-area .site-main .s-hero {
     min-height: calc(100vh - 34px);
 }
 
-#header {
+#header .navbar .navbar-brand .navbar-item {
+    font-family: 'Cantata One', serif;
+}
 
+#header .navbar .navbar-menu .navbar-item:nth-child(1) {
+    margin-left: auto;
+}
+
+#header .navbar .navbar-menu .navbar-item:nth-last-child(2) {
+    margin-right: 92px;
+}
+
+#header .navbar .navbar-menu .navbar-start {
+    flex: 1 1 0%;
+}
+
+#header .navbar .navbar-menu .navbar-start .navbar-item.contact {
+    font-size: 0;
+    margin-left: auto;
+}
+
+#header .navbar .navbar-menu .navbar-start .navbar-item.contact::after {
+    font-size: 1rem;
+    color: white;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 800;
+    content: "\f0e0";
 }
 
 .site-content .content-area .site-main .s-hero {
@@ -61,6 +91,49 @@ body.admin-bar .site-content .content-area .site-main .s-hero {
 }
 
 .site-content .content-area .site-main .s-hero .s-hero__background-image::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: #303030;
+    opacity: 0.5;
+}
+
+.site-content .content-area .site-main .s-hero .s-hero__background-video-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.site-content .content-area .site-main .s-hero .s-hero__background-video {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 300%;
+    top: -100%;
+}
+
+.site-content .content-area .site-main .s-hero .s-hero__background-video-container::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: linear-gradient(90deg, rgba(48,48,48,1) 0%, rgba(48,48,48,0) 100%);
+}
+
+.site-content .content-area .site-main .s-hero .s-hero__background-video-container::before {
     content: '';
     display: block;
     position: absolute;
