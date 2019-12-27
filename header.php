@@ -24,10 +24,9 @@
 	<div id="page" class="site">
 		<?php bulmapress_skip_link_screen_reader_text(); ?>
 		<header id="header">
-			<nav id="site-navigation" class="navbar" role="navigation">
+			<nav id="site-navigation" class="navbar is-fixed-top is-dark" role="navigation">
 				<div class="navbar-brand">
 					<?php bulmapress_home_link('navbar-item'); ?>
-					<?php bulmapress_blog_description('navbar-item is-muted'); ?>
 					<?php bulmapress_menu_toggle(); ?>
 				</div>
 				<div class="navbar-menu">

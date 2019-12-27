@@ -18,20 +18,9 @@
 <div id="primary" class="content-area">
 	<main id="main" class="site-main wrapper" role="main">
 		<?php if ( have_posts() ) : ?>
-			<div class="container">
-				<div class="columns is-multiline">
-					<?php while ( have_posts() ) : the_post(); ?>
-						<div class="column is-one-third">
-							<?php get_template_part( 'template-parts/content', 'post' ); ?>
-						</div>
-					<?php endwhile; ?>
-				</div>
-			</div>
-			<div class="section pagination">
-				<div class="container">
-					<?php the_posts_pagination(); ?>
-				</div>
-			</div>
+			<?php while ( have_posts() ) : the_post(); ?>
+				<?php get_template_part( 'template-parts/content', 'post' ); ?>
+			<?php endwhile; ?>
 		<?php else : ?>
 			<?php get_template_part( 'template-parts/content', 'none' ); ?>
 		<?php endif; ?>

@@ -37,3 +37,27 @@ require get_template_directory() . '/functions/template-tags.php';
 require get_template_directory() . '/functions/extras.php';
 require get_template_directory() . '/functions/customizer.php';
 require get_template_directory() . '/functions/jetpack.php';
+
+//MY CUSTOM FUNCTIONS
+if (function_exists('acf_register_block_type')) {
+	add_action('acf/init', 'register_acf_block_types');
+}
+
+function register_acf_block_types() {
+	acf_register_block_type(
+		array(
+			'name' => 'hero',
+			'title' => __('Hero'),
+			'description' => __('Custom Hero block'),
+			'render_template' => 'template-parts/blocks/hero/hero.php',
+			'icon' => 'editor-paste-text',
+			'keywords' =>array('hero', 'product'),
+		)
+	);
+}
+
+function additional_custom_styles() {
+    /*Enqueue The Styles*/
+    wp_enqueue_style( 'uniquestylesheetid', get_template_directory_uri() . '/frontend/bulmapress/css/main.css' ); 
+}
+add_action( 'wp_enqueue_scripts', 'additional_custom_styles' );
