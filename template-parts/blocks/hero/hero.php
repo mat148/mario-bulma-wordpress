@@ -1,4 +1,4 @@
-<section class="<?php echo esc_attr($className) ?> s-hero hero is-fullheight is-dark is-relative">
+<section class="s-hero hero is-fullheight is-dark is-relative">
     <?php 
     $title = get_field('hero_title');
     $subtitle = get_field('hero_subtitle');

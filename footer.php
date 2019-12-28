@@ -12,11 +12,11 @@
 
 </div><!-- #content -->
 
-<footer id="colophon" class="site-footer hero is-transparent" role="contentinfo">
+<footer id="colophon" class="site-footer hero is-black" role="contentinfo">
 	<div class="container">
 		<div class="hero-body has-text-centered">
 			<div class="site-info">
-				<?php bulmapress_copyright_link(); ?>
+				Copyright <?php echo get_copyright(); ?> SUPA
 			</div><!-- .site-info -->
 		</div>
 	</div><!-- .container -->

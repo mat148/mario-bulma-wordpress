@@ -40,10 +40,11 @@ require get_template_directory() . '/functions/jetpack.php';
 
 //MY CUSTOM FUNCTIONS
 if (function_exists('acf_register_block_type')) {
-	add_action('acf/init', 'register_acf_block_types');
+	add_action('acf/init', 'register_hero_block_type');
+	add_action('acf/init', 'register_content_block_type');
 }
 
-function register_acf_block_types() {
+function register_hero_block_type() {
 	acf_register_block_type(
 		array(
 			'name' => 'hero',
@@ -56,6 +57,19 @@ function register_acf_block_types() {
 	);
 }
 
+function register_content_block_type() {
+	acf_register_block_type(
+		array(
+			'name' => 'content-block',
+			'title' => __('Content Block'),
+			'description' => __('Custom Content block'),
+			'render_template' => 'template-parts/blocks/content-block/content-block.php',
+			'icon' => 'editor-paste-text',
+			'keywords' =>array('Content'),
+		)
+	);
+}
+
 function additional_custom_styles() {
     /*Enqueue The Styles*/
     wp_enqueue_style( 'uniquestylesheetid', get_template_directory_uri() . '/frontend/bulmapress/css/main.css' ); 
@@ -63,7 +77,7 @@ function additional_custom_styles() {
 add_action( 'wp_enqueue_scripts', 'additional_custom_styles' );
 
 function wpb_add_google_fonts() {
-	wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css?family=Cantata+One|Imprima&display=swap', false ); 
+	wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css?family=Cantata+One|Open+Sans&display=swap', false ); 
 }
 	
 add_action( 'wp_enqueue_scripts', 'wpb_add_google_fonts' );
@@ -73,3 +87,27 @@ function wpb_add_font_awesome() {
 }
 	
 add_action( 'wp_enqueue_scripts', 'wpb_add_font-awesome' );
+
+function get_copyright() {
+	global $wpdb;
+
+	$copyright_dates = $wpdb->get_results("
+		SELECT
+			YEAR(min(post_date_gmt)) AS firstdate,
+			YEAR(max(post_date_gmt)) AS lastdate
+		FROM
+			$wpdb->posts
+		WHERE
+			post_status = 'publish'
+	");
+
+	$output = '';
+	if($copyright_dates) {
+		$copyright = "&copy; " . $copyright_dates[0]->firstdate;
+		if($copyright_dates[0]->firstdate != $copyright_dates[0]->lastdate) {
+			$copyright .= '-' . $copyright_dates[0]->lastdate;
+		}
+		$output = $copyright;
+	}
+	return $output;
+}
