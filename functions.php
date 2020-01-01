@@ -42,6 +42,8 @@ require get_template_directory() . '/functions/jetpack.php';
 if (function_exists('acf_register_block_type')) {
 	add_action('acf/init', 'register_hero_block_type');
 	add_action('acf/init', 'register_content_block_type');
+	add_action('acf/init', 'register_gallery_block_type');
+	add_action('acf/init', 'register_music_block_type');
 }
 
 function register_hero_block_type() {
@@ -66,6 +68,32 @@ function register_content_block_type() {
 			'render_template' => 'template-parts/blocks/content-block/content-block.php',
 			'icon' => 'editor-paste-text',
 			'keywords' =>array('Content'),
+		)
+	);
+}
+
+function register_gallery_block_type() {
+	acf_register_block_type(
+		array(
+			'name' => 'gallery',
+			'title' => __('Gallery'),
+			'description' => __('Custom Content block'),
+			'render_template' => 'template-parts/blocks/gallery/gallery.php',
+			'icon' => 'editor-paste-text',
+			'keywords' =>array('Gallery'),
+		)
+	);
+}
+
+function register_music_block_type() {
+	acf_register_block_type(
+		array(
+			'name' => 'music',
+			'title' => __('Music'),
+			'description' => __('Custom Content block'),
+			'render_template' => 'template-parts/blocks/music/music.php',
+			'icon' => 'editor-paste-text',
+			'keywords' =>array('Music'),
 		)
 	);
 }
