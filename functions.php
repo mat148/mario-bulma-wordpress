@@ -139,3 +139,22 @@ function get_copyright() {
 	}
 	return $output;
 }
+
+// Our custom post type function
+function create_posttype() {
+ 
+    register_post_type( 'music',
+    // CPT Options
+        array(
+            'labels' => array(
+                'name' => __( 'Music' ),
+                'singular_name' => __( 'Music' )
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'music'),
+        )
+    );
+}
+// Hooking up our function to theme setup
+add_action( 'init', 'create_posttype' );
