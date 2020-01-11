@@ -16,12 +16,18 @@
 	<div class="container">
 		<div class="hero-body has-text-centered">
 			<div class="site-info">
-				Copyright <?php echo get_copyright(); ?> SUPA
+				Copyright &copy; since 2019 SUPA
 			</div><!-- .site-info -->
 		</div>
 	</div><!-- .container -->
 </footer><!-- #colophon -->
 </div><!-- #page -->
+
+<script>
+  audiojs.events.ready(function() {
+    var as = audiojs.createAll();
+  });
+</script>
 
 <?php wp_footer(); ?>
 

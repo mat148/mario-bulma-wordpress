@@ -668,3 +668,10 @@ body.admin-bar .site-content .content-area .site-main .s-hero {
     text-shadow: none;
     font-family: 'Cantata One', serif;
 }
+
+/* Music Block */
+.site-content .content-area .site-main .s-music {}
+.site-content .content-area .site-main .s-music .music_player {}
+.site-content .content-area .site-main .s-music .music_player #music-player {
+    width: 100%;
+}
